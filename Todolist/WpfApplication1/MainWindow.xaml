@@ -14,7 +14,7 @@
             <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" x:Name="titleBar" MouseDown="titleBar_MouseDown"></StackPanel>
+        <StackPanel Grid.Row="0" Background="White" x:Name="titleBar" MouseMove="titleBar_MouseMove"></StackPanel>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0 0 0 0">
             <StackPanel x:Name="ToDoStack"></StackPanel>
