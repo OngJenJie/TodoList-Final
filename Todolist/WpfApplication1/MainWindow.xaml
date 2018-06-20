@@ -9,15 +9,18 @@
         WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" Margin="0 30 0 0">
+        <StackPanel Grid.Row="0" x:Name="titleBar" MouseDown="titleBar_MouseDown"></StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0 0 0 0">
             <StackPanel x:Name="ToDoStack"></StackPanel>
         </ScrollViewer>
 
-        <StackPanel Grid.Row="1" Background="#0075AA" Orientation="Horizontal">
+        <StackPanel Grid.Row="2" Background="#0075AA" Orientation="Horizontal">
             <Button x:Name="addButton" Click="addButton_Click">
                 <Button.Template>
                     <ControlTemplate>

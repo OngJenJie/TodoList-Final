@@ -31,5 +31,11 @@ namespace WpfApplication1
 
             ToDoStack.Children.Add(Item);
         }
+
+        private void titleBar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
     }
 }
