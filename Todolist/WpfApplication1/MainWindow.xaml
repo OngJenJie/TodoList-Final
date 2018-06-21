@@ -16,15 +16,15 @@
             <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Background="White" x:Name="titleBar" MouseMove="titleBar_MouseMove">
-            <Button Width="30" Height="30" x:Name="Close" Click="Close_Click">x</Button>
+        <StackPanel Grid.Row="0" Background="White" x:Name="titleBar" MouseMove="titleBar_MouseMove" HorizontalAlignment="Right">
+            <Button Width="30" Height="30" x:Name="Close" Click="Close_Click" Margin="0 0 5 0">x</Button>
         </StackPanel>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0 0 0 0">
             <StackPanel x:Name="ToDoStack"></StackPanel>
         </ScrollViewer>
 
-        <StackPanel Grid.Row="2" Background="#0075AA" Orientation="Horizontal">
+        <StackPanel Grid.Row="2" Background="#0075AA" Orientation="Horizontal" >
             <Button x:Name="addButton" Click="addButton_Click">
                 <Button.Template>
                     <ControlTemplate>

@@ -10,7 +10,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBox Width="50" Margin="10 0 0 0" VerticalContentAlignment="Center" Background="Transparent" BorderThickness="0" FontSize="19" Foreground="Gray"> 00/00 </TextBox>
             <TextBox Width="180" Margin="10 0 0 0 " VerticalContentAlignment="Center" Background="Transparent" BorderThickness="0" FontSize="19" x:Name="itemName">new Task</TextBox>
-            <TextBox Width="50" VerticalContentAlignment="Center" Background="Transparent" BorderThickness="0" FontSize="19" Foreground="#8FC3BB">0</TextBox>
+            <TextBox Width="50" VerticalContentAlignment="Center" Background="Transparent" BorderThickness="0" FontSize="19" Foreground="#8FC3BB" x:Name="moneyCount">0</TextBox>
         </StackPanel>
     </Grid>
 </UserControl>
