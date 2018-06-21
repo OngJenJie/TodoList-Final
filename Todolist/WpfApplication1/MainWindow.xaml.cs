@@ -29,6 +29,7 @@ namespace WpfApplication1
         {
             todolist Item = new todolist();
 
+            // 增加物品
             ToDoStack.Children.Add(Item);
         }
 
@@ -36,8 +37,50 @@ namespace WpfApplication1
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
+                // 拖拉視窗
                 this.DragMove();
             }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            // 新增一個串列裝每個項目轉成的文字
+            List<string> datas = new List<string>();
+
+            // 轉換每一個項目
+          foreach(todolist item in ToDoStack.Children)
+            {
+                string line = "";
+                line += "|" + item.itemName;
+
+                datas.Add(line);
+            }
+            // 存檔
+            System.IO.File.WriteAllLines(@"C:\temp\data.txt", datas);
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // 開檔
+            string[] lines = System.IO.File.ReadAllLines(@"C:\temp\data.txt");
+
+            foreach(string line in lines)
+            {
+                // 用 | 符號拆開
+                string[] parts = line.Split('|');
+
+                // 建立 TodoItem
+                todolist item = new todolist();
+
+                // 放到清單中
+                ToDoStack.Children.Add(item);
+            }
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

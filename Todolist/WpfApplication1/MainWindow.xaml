@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="300"
-        WindowStyle="None">
+        WindowStyle="None"
+        Closed="Window_Closed"
+        Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
@@ -14,7 +16,9 @@
             <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Background="White" x:Name="titleBar" MouseMove="titleBar_MouseMove"></StackPanel>
+        <StackPanel Grid.Row="0" Background="White" x:Name="titleBar" MouseMove="titleBar_MouseMove">
+            <Button Width="30" Height="30" x:Name="Close" Click="Close_Click">x</Button>
+        </StackPanel>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0 0 0 0">
             <StackPanel x:Name="ToDoStack"></StackPanel>
