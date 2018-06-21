@@ -8,9 +8,9 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Width="300" Height="40" Background="White">
         <StackPanel Orientation="Horizontal">
-            <TextBox Width="50" Margin="10 0 0 0" VerticalContentAlignment="Center" Background="Transparent" BorderThickness="0" FontSize="19" Foreground="LightGray" x:Name="date"> 00/00 </TextBox>
-            <TextBox Width="180" Margin="10 0 0 0 " VerticalContentAlignment="Center" Background="Transparent" BorderThickness="0" FontSize="19" Foreground="Gray" x:Name="itemName">new Task</TextBox>
-            <TextBox Width="50" VerticalContentAlignment="Center" Background="Transparent" BorderThickness="0" FontSize="19" Foreground="#97C6C8" x:Name="moneyCount" >0</TextBox>
+            <TextBox Width="50" Margin="10 0 0 0" VerticalContentAlignment="Center" TextAlignment="Left" Background="Transparent" BorderThickness="0" FontSize="19" Foreground="LightGray" x:Name="date"> 00/00 </TextBox>
+            <TextBox Width="170" Margin="10 0 0 0 " VerticalContentAlignment="Center"  Background="Transparent" BorderThickness="0" FontSize="19" Foreground="Gray" x:Name="itemName">new Task</TextBox>
+            <TextBox Width="50"  Margin="0 0 10 0" VerticalContentAlignment="Center" HorizontalAlignment="Right" TextAlignment="Right" Background="Transparent" BorderThickness="0" FontSize="19" Foreground="#97C6C8" x:Name="moneyCount" >0</TextBox>
         </StackPanel>
     </Grid>
 </UserControl>
