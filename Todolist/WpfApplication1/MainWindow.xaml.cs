@@ -51,7 +51,7 @@ namespace WpfApplication1
           foreach(todolist item in ToDoStack.Children)
             {
                 string line = "";
-                line += "|" + item.itemName;
+                line += "|" + item.date.Text + "|" + item.itemName.Text + "|" + item.moneyCount.Text ;
 
                 datas.Add(line);
             }
@@ -69,18 +69,29 @@ namespace WpfApplication1
             {
                 // 用 | 符號拆開
                 string[] parts = line.Split('|');
-
                 // 建立 TodoItem
                 todolist item = new todolist();
 
-                // 放到清單中
-                ToDoStack.Children.Add(item);
+                item.date.Text = parts[1];
+                item.itemName.Text = parts[2];
+                item.moneyCount.Text = parts[3];
             }
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            int sum =0;
+            
+            foreach(todolist item in ToDoStack.Children)
+            {
+                sum += int.Parse(item.moneyCount.Text   );
+                Total.Text = sum.ToString();
+            }
         }
     }
 }
