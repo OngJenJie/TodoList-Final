@@ -53,7 +53,7 @@ namespace WpfApplication1
                 string line = "";
                 line += "|" + item.date.Text + "|" + item.itemName.Text + "|" + item.moneyCount.Text ;
 
-                datas.Add(line);
+                datas.Add(line);    
             }
             // 存檔
             System.IO.File.WriteAllLines(@"C:\temp\data.txt", datas);
@@ -75,6 +75,15 @@ namespace WpfApplication1
                 item.date.Text = parts[1];
                 item.itemName.Text = parts[2];
                 item.moneyCount.Text = parts[3];
+
+                ToDoStack.Children.Add(item);
+            }
+            int sum = 0;
+
+            foreach (todolist item in ToDoStack.Children)
+            {
+                sum += int.Parse(item.moneyCount.Text);
+                Total.Text = sum.ToString();
             }
         }
 
